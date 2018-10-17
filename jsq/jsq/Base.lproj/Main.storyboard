@@ -33,7 +33,7 @@
                                 <rect key="frame" x="255" y="154" width="30" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="+">
+                                <state key="normal" title="-">
                                     <color key="titleColor" red="0.60061427324740457" green="0.97883621061778603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.42274963889194306" green="1" blue="0.55525625487248309" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -105,7 +105,7 @@
                                 <rect key="frame" x="255" y="192" width="30" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="-">
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="0.60061427324740457" green="0.97883621061778603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.42274963889194306" green="1" blue="0.55525625487248309" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

@@ -96,6 +96,7 @@ class ViewController: UIViewController {
         }
 @IBAction   func ac(_ sender: Any) {
        output.text = ""
+    output_1.text = ""
     }
 @IBAction func point(_ sender: Any) {
     
@@ -106,7 +107,7 @@ class ViewController: UIViewController {
     if z == 1{
         let a = Double(output_1.text!)!
          let b = Double(output.text!)!
-        let c = a - b
+        let c = a + b
         output_1.text = String(c)
         output.text=""
         number = 1
@@ -131,6 +132,55 @@ class ViewController: UIViewController {
     output.text = output.text! + "X"
     }
 @IBAction func equal(_ sender: Any) {
+    var d : Double
+    
+    var c : Double
+    
+    let x = Double(output_1.text!)!
+    
+     c = (output.text! as NSString).doubleValue
+    
+    if number == 1 {
+        
+        d = x - c
+        
+     }else if number == 2 {
+        
+        d = x + c
+        
+     }else if number == 3 {
+        
+        d = x * c
+        
+     }else if number == 4 {
+        
+        d = x / (c)
+        
+     }else {
+        
+        d = 1000
+        
+    }
+    
+    output_1.text = String(c)
+    
+    if judge == 1{
+        
+        output.text = String(format:"%.0f", d)
+        
+    }else {
+        
+        output.text = String(format:"%.0f", d)
+        
+    }
+    
+    outp = 1
+    
+    judge = 0
+    
+    z = 0
+    
+    }
+    
+}
 
-}
-}
