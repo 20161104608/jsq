@@ -96,7 +96,11 @@ class ViewController: UIViewController {
         }
 @IBAction   func ac(_ sender: Any) {
        output.text = ""
-    output_1.text = ""
+       output_1.text = ""
+       outp  = 0
+       judge  = 0
+       number  = 0
+        z = 0
     }
 @IBAction func point(_ sender: Any) {
     
@@ -126,12 +130,63 @@ class ViewController: UIViewController {
     }
     }
 @IBAction func plus(_ sender: Any) {
-    output.text = output.text! + "-"
+    if z == 1{
+        
+        let a = Double(output_1.text!)!
+        
+        let b = Double(output.text!)!
+        
+        let c = a - b
+        
+       output_1.text = String(c)
+        
+       output.text = ""
+        
+        number = 2
+        
+         outp = 1
+        
+      }else{
+        
+      if output.text == ""{
+            
+           output.text = "0"
+            
+           }else {
+            
+   let x = Double(output.text!)!
+               output_1.text = String(x)
+             output.text = ""
+             number = 2
+              outp = 0
+              }
+       }
     }
-@IBAction func multiply(_ sender: Any) {
-    output.text = output.text! + "X"
+   @IBAction func multiply(_ sender: Any) {
+    if z == 1{
+        let a = Double(output_1.text!)!
+        let b = Double(output.text!)!
+        
+        let c = a * b
+        
+        output_1.text = String(c)
+        output.text = ""
+        outp = 1
+        }else{
+        if output.text == ""{
+            output .text = "0"
+      }else {
+            let x = Double(output.text!)!
+            output_1.text = String(x)
+            output.text = ""
+            number = 3
+            outp = 0
+            z = 1
+            }
+        }
     }
-@IBAction func equal(_ sender: Any) {
+   
+   @IBAction func equal(_ sender: Any) {
     var d : Double
     
     var c : Double
@@ -183,4 +238,5 @@ class ViewController: UIViewController {
     }
     
 }
+
 
