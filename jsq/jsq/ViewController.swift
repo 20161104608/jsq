@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+ 
+    @IBOutlet weak var output_2: UITextField!
     @IBOutlet weak var output_1: UITextField!
     var outp = 0 ;
     var judge = 0;
@@ -103,33 +105,71 @@ class ViewController: UIViewController {
         z = 0
     }
 @IBAction func point(_ sender: Any) {
-    
-    output.text = output.text! + "."
-     judge = 1
+    if judge == 0{
+        output.text = output.text! + "."
     }
-@IBAction func add(_ sender: Any) {
-    if z == 1{
+    judge = 1
+    }
+    @IBAction func change(_ sender: Any) {
+        let count = Double(output.text!)!
+        let count2 = -count
+        output.text = String(count2)
+        outp = 0
+    }
+    @IBAction func add(_ sender: Any) {
+    if z == 1 {
         let a = Double(output_1.text!)!
-         let b = Double(output.text!)!
+        let b = Double(output.text!)!
         let c = a + b
         output_1.text = String(c)
         output.text=""
         number = 1
         outp = 1
-    }
-    else{
+        judge = 0
+     }
+    else {
         if output.text == ""{
             output.text = "0"
-        }else{
+            
+        }
+        else {
+            
             let y = Double(output.text!)!
             output_1.text = String(y)
             output.text = ""
             number = 1
             outp = 0
+            judge = 0
         }
     }
-    }
-@IBAction func plus(_ sender: Any) {
+}
+    @IBAction func divide(_ sender: Any) {
+        if z == 1{
+            let a = Double(output_1.text!)!
+            let b = Double(output.text!)!
+            let c = a / b
+          output_1.text = String(c)
+          output.text = ""
+          number = 4
+          outp = 1
+            judge = 0
+        }
+        else {
+            if output.text == ""{
+                output.text = "0"
+                }
+            else {
+                let y = Double(output.text!)!
+                output_1.text = String(y)
+                output.text = ""
+                number = 4
+                outp = 0
+                z = 1
+                judge = 0
+            }
+       }
+  }
+    @IBAction func plus(_ sender: Any) {
     if z == 1{
         
         let a = Double(output_1.text!)!
@@ -145,23 +185,26 @@ class ViewController: UIViewController {
         number = 2
         
          outp = 1
+        judge = 0
         
-      }else{
+    }else {
         
       if output.text == ""{
             
            output.text = "0"
             
-           }else {
+        }
+      else {
             
-   let x = Double(output.text!)!
+               let x = Double(output.text!)!
                output_1.text = String(x)
-             output.text = ""
-             number = 2
-              outp = 0
-              }
-       }
-    }
+               output.text = ""
+               number = 2
+               outp = 0
+        judge = 0
+         }
+     }
+}
    @IBAction func multiply(_ sender: Any) {
     if z == 1{
         let a = Double(output_1.text!)!
@@ -171,10 +214,12 @@ class ViewController: UIViewController {
         
         output_1.text = String(c)
         output.text = ""
+        number = 3
         outp = 1
+        judge = 0
         }else{
         if output.text == ""{
-            output .text = "0"
+            output.text = "0"
       }else {
             let x = Double(output.text!)!
             output_1.text = String(x)
@@ -182,6 +227,7 @@ class ViewController: UIViewController {
             number = 3
             outp = 0
             z = 1
+            judge = 0
             }
         }
     }
@@ -217,15 +263,15 @@ class ViewController: UIViewController {
         
     }
     
-    output_1.text = String(c)
+    output_2.text = String(c)
     
     if judge == 1{
         
-        output.text = String(format:"%.0f", d)
+        output.text = String(format:"%f", d)
         
     }else {
         
-        output.text = String(format:"%.0f", d)
+        output.text = String(format:"%.5f", d)
         
     }
     
