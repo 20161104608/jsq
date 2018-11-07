@@ -278,6 +278,9 @@ class ViewController: UIViewController {
     while clear.last == "0"{
         clear.removeLast()
     }
+    while clear.last == "."{
+        clear.removeLast()
+    }
     output.text = clear
      }
     
