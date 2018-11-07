@@ -18,7 +18,7 @@ class ViewController: UIViewController {
  
     @IBOutlet weak var output_2: UITextField!
     @IBOutlet weak var output_1: UITextField!
-    var outp = 0 ;
+    var outp = 0;
     var judge = 0;
     var number = 0;
     var  z = 0;
@@ -117,10 +117,10 @@ class ViewController: UIViewController {
          outp = 0
      }
     @IBAction func add(_ sender: Any) {
-         judge = 0
+        
         if z == 1 {
+            judge = 0
             let a = Double(output_1.text!)!
-           
             let b = Double(output.text!)!
             let c = a + b
             output_1.text = String(c)
@@ -134,9 +134,9 @@ class ViewController: UIViewController {
                 output.text = "0"
              }
             else {
-               
-                let y = Double(output.text!)!
-                output_1.text = String(y)
+                z = 1
+                let x = Double(output.text!)!
+                output_1.text = String(x)
                 output.text = ""
                 number = 1
                 outp = 0
@@ -146,6 +146,7 @@ class ViewController: UIViewController {
       }
     @IBAction func divide(_ sender: Any) {
         if z == 1{
+            judge = 0
             let a = Double(output_1.text!)!
             let b = Double(output.text!)!
             let c = a / b
@@ -160,8 +161,9 @@ class ViewController: UIViewController {
                output.text = "0"
              }
             else {
-                let y = Double(output.text!)!
-                output_1.text = String(y)
+                 z = 1
+                let x = Double(output.text!)!
+                output_1.text = String(x)
                 output.text = ""
                 number = 4
                 outp = 0
@@ -172,11 +174,9 @@ class ViewController: UIViewController {
     }
     @IBAction func plus(_ sender: Any) {
         if z == 1{
-            
+            judge = 0
             let a = Double(output_1.text!)!
-            
             let b = Double(output.text!)!
-            
             let c = a - b
             output_1.text = String(c)
             output.text = ""
@@ -190,6 +190,7 @@ class ViewController: UIViewController {
                output.text = "0"
            }
           else {
+            z = 1
             let x = Double(output.text!)!
             output_1.text = String(x)
             output.text = ""
@@ -201,6 +202,7 @@ class ViewController: UIViewController {
      }
    @IBAction func multiply(_ sender: Any) {
         if z == 1{
+            judge = 0
             let a = Double(output_1.text!)!
             let b = Double(output.text!)!
             let c = a * b
@@ -213,6 +215,7 @@ class ViewController: UIViewController {
            if output.text == ""{
                output.text = "0"
            }else {
+               z = 1
                let x = Double(output.text!)!
                output_1.text = String(x)
                output.text = ""
@@ -226,7 +229,6 @@ class ViewController: UIViewController {
          }
     
      }
-   
    @IBAction func equal(_ sender: Any) {
     var d : Double
     
@@ -269,13 +271,14 @@ class ViewController: UIViewController {
         output.text = String(format:"%.5f", d)
         
      }
-    
-      outp = 1
-    
-      judge = 0
-    
-      z = 0
-    
+         outp = 1
+         judge = 0
+         z = 0
+    var clear:String  = output.text!
+    while clear.last == "0"{
+        clear.removeLast()
+    }
+    output.text = clear
      }
     
   }
