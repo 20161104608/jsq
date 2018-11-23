@@ -164,6 +164,7 @@ class ViewController: UIViewController {
                  z = 1
                 let x = Double(output.text!)!
                 output_1.text = String(x)
+               // output_1.text = String(x) + " / "
                 output.text = ""
                 number = 4
                 outp = 0
@@ -193,6 +194,7 @@ class ViewController: UIViewController {
             z = 1
             let x = Double(output.text!)!
             output_1.text = String(x)
+           // output_1.text = String(x) + " - "
             output.text = ""
             number = 2
             outp = 0
@@ -218,6 +220,7 @@ class ViewController: UIViewController {
                z = 1
                let x = Double(output.text!)!
                output_1.text = String(x)
+              // output_1.text = String(x) + " * "
                output.text = ""
                number = 3
                outp = 0
@@ -233,7 +236,7 @@ class ViewController: UIViewController {
     var d : Double
     
     var c : Double
-    
+
     let x = Double(output_1.text!)!
     
      c = (output.text! as NSString).doubleValue
@@ -241,19 +244,19 @@ class ViewController: UIViewController {
     if number == 1 {
         
         d = x - c
-        output_1.text = String(x) + "-" + String(c)
+        output_1.text = String(x) + " - " + String(c)
      }else if number == 2 {
         
         d = x + c
-        output_1.text = String(x) + "+" + String(c)
+       output_1.text = String(x) + " + " + String(c)
      }else if number == 3 {
         
         d = x * c
-        output_1.text = String(x) + "*" + String(c)
+        output_1.text = String(x) + " * " + String(c)
      }else if number == 4 {
         
         d = x / (c)
-        output_1.text = String(x) + "/" + String(c)
+        output_1.text = String(x) + " / " + String(c)
      }else {
         
         d = 1000
@@ -285,5 +288,5 @@ class ViewController: UIViewController {
      }
     
   }
-
+                           
 
